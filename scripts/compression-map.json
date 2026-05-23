@@ -1,0 +1,42 @@
+[
+  {
+    "from": "/images/about/hospitality.png",
+    "to": "/images/about/hospitality.webp",
+    "archived": "to-Be_deleted/about/hospitality.png"
+  },
+  {
+    "from": "/images/about/team/Mohamed Raihan.jpeg",
+    "to": "/images/about/team/Mohamed Raihan.webp",
+    "archived": "to-Be_deleted/about/team/Mohamed Raihan.jpeg"
+  },
+  {
+    "from": "/images/about/team/Rizvana.jpeg",
+    "to": "/images/about/team/Rizvana.webp",
+    "archived": "to-Be_deleted/about/team/Rizvana.jpeg"
+  },
+  {
+    "from": "/images/home/destinations/ooty/ooty-lake.jpg",
+    "to": "/images/home/destinations/ooty/ooty-lake.webp",
+    "archived": "to-Be_deleted/home/destinations/ooty/ooty-lake.jpg"
+  },
+  {
+    "from": "/images/home/destinations/wayanad/wayanad-mountains.jpg",
+    "to": "/images/home/destinations/wayanad/wayanad-mountains.webp",
+    "archived": "to-Be_deleted/home/destinations/wayanad/wayanad-mountains.jpg"
+  },
+  {
+    "from": "/images/home/transport/cabs/force-urabania.png",
+    "to": "/images/home/transport/cabs/force-urabania.webp",
+    "archived": "to-Be_deleted/home/transport/cabs/force-urabania.png"
+  },
+  {
+    "from": "/images/properties/stayaro-logo.png",
+    "to": "/images/properties/stayaro-logo.webp",
+    "archived": "to-Be_deleted/properties/stayaro-logo.png"
+  },
+  {
+    "from": "/images/properties/wayanadGate_logoGreen.png",
+    "to": "/images/properties/wayanadGate_logoGreen.webp",
+    "archived": "to-Be_deleted/properties/wayanadGate_logoGreen.png"
+  }
+]

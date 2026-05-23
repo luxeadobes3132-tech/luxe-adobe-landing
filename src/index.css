@@ -1,0 +1,660 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Lenis handles smooth scrolling; avoid CSS smooth here  -  it delays window.scrollTo on route changes */
+  html {
+    position: relative;
+    scroll-behavior: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply font-sans text-charcoal bg-warm;
+    position: relative;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  /* App mount point */
+  #root {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+}
+
+@layer components {
+  /*
+   * Property detail  -  room strips (fine pointer + hover only, driven by data-reveal / data-pre-close).
+   * Open: grid expands; veil lifts; detail blocks stagger in.
+   * Close: data-pre-close runs first (veil + copy fade, grid still open), then grid collapses  -  no instant clip.
+   */
+  .room-strip-details-shell {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip:not([data-reveal='true']) .room-strip-details-shell {
+      grid-template-rows: 0fr;
+    }
+
+    .room-strip[data-reveal='true'] .room-strip-details-shell {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .room-strip .room-strip-details-shell {
+      grid-template-rows: 1fr !important;
+      transition: none !important;
+    }
+  }
+
+  .room-strip-hint {
+    display: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip-hint {
+      display: flex;
+    }
+  }
+
+  .room-strip-veil {
+    display: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip-veil {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(4px);
+      transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Fully open: veil away */
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-veil {
+      opacity: 0;
+      transform: translateY(-14px) scale(1.02);
+      filter: blur(0);
+      pointer-events: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .room-strip-veil {
+      display: none !important;
+    }
+  }
+
+  /* Detail blocks  -  hidden when closed OR during pre-close exit */
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip:not([data-reveal='true']) .room-strip-detail-block,
+    .room-strip[data-pre-close='true'] .room-strip-detail-block {
+      opacity: 0;
+      transform: translateY(1.125rem);
+      filter: blur(6px);
+    }
+
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-detail-block {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+
+    .room-strip-detail-block {
+      transition:
+        opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Open stagger (forward) */
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-detail-block--a {
+      transition-delay: 0.14s;
+    }
+
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-detail-block--b {
+      transition-delay: 0.28s;
+    }
+
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-detail-block--c {
+      transition-delay: 0.42s;
+    }
+
+    /* Pre-close stagger (reverse  -  features first, then body, then capacity) */
+    .room-strip[data-pre-close='true'] .room-strip-detail-block--a {
+      transition-delay: 0.18s;
+    }
+
+    .room-strip[data-pre-close='true'] .room-strip-detail-block--b {
+      transition-delay: 0.09s;
+    }
+
+    .room-strip[data-pre-close='true'] .room-strip-detail-block--c {
+      transition-delay: 0s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .room-strip-detail-block {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Features divider  -  follows reveal + pre-close (not only Tailwind group-hover) */
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip-feature-rule {
+      transform: scaleX(0);
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-feature-rule {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    .room-strip-feature-rule {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .room-strip-feature-rule {
+      transform: scaleX(1) !important;
+      transition: none !important;
+    }
+  }
+
+  /* Strip background wash */
+  .room-strip-atmosphere {
+    opacity: 1;
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .room-strip .room-strip-atmosphere {
+      opacity: 0.55;
+    }
+
+    .room-strip[data-reveal='true']:not([data-pre-close='true']) .room-strip-atmosphere {
+      opacity: 1;
+    }
+
+    .room-strip[data-pre-close='true'] .room-strip-atmosphere {
+      opacity: 0.62;
+    }
+  }
+
+  /* Accommodation icon tile  -  border traces on card hover (SVG stroke-dash) */
+  .luxe-room-icon-border-draw {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+
+  @keyframes luxe-room-icon-border-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .group:hover .luxe-room-icon-border-draw {
+    animation: luxe-room-icon-border-draw 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .group:hover .luxe-room-icon-border-draw {
+      animation: none;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Editorial strips: full gold frame without hover draw animation */
+  .luxe-room-icon-border-rest {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+  }
+
+  /* 3D Perspective for text animations */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .perspective-500 {
+    perspective: 500px;
+  }
+  
+  /* Preserve 3D for child elements */
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Stable hero viewport on mobile: avoid dvh resize jitter as browser chrome collapses/expands */
+  .min-h-hero-viewport {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .h-hero-viewport {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  /* Text shadow glow effect */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(198, 167, 94, 0.4);
+  }
+  
+  .text-glow-strong {
+    text-shadow: 0 0 30px rgba(198, 167, 94, 0.6),
+                 0 0 60px rgba(198, 167, 94, 0.3);
+  }
+  
+  /* Subtle black text shadow for readability */
+  .text-shadow-readable {
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Stronger text shadow for taglines/subtitles */
+  .text-shadow-strong {
+    text-shadow: 0 6px 14px rgba(0, 0, 0, 0.95), 0 3px 8px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C6A75E 0%, #E8D5A3 50%, #C6A75E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Shimmer effect for buttons/elements */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    animation: shimmer 2s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  
+  /* Smooth parallax scroll */
+  .parallax-slow {
+    will-change: transform;
+  }
+  
+  /* GPU acceleration for hero images */
+  .hero-image {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform, opacity, filter;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Subtle motion / video-frame grain over hero stills */
+  .hero-cinematic-grain {
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04) 0 1px,
+        transparent 1px 3px
+      ),
+      repeating-linear-gradient(
+        100deg,
+        rgba(0, 0, 0, 0.05) 0 1px,
+        transparent 1px 5px
+      );
+    animation: heroCinematicGrain 12s linear infinite;
+  }
+
+  @keyframes heroCinematicGrain {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-0.35%, 0.2%);
+    }
+    50% {
+      transform: translate(0.2%, -0.25%);
+    }
+    75% {
+      transform: translate(-0.2%, -0.1%);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cinematic-grain {
+      animation: none;
+    }
+  }
+  
+  /* Smooth scrolling optimization */
+  .smooth-scroll-container {
+    transform: translateZ(0);
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Prevent jumpy scrolling on hero section */
+  section[class*="hero"] {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Breathing animation */
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+  
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+  }
+  
+  /* Float animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Fade slide up animation */
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Pulse glow effect */
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(198, 167, 94, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(198, 167, 94, 0.4),
+                  0 0 40px rgba(198, 167, 94, 0.2);
+    }
+  }
+  
+  /* Line expand animation */
+  .animate-line-expand {
+    animation: lineExpand 1s ease-out forwards;
+  }
+  
+  @keyframes lineExpand {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  /* Hide scrollbar while keeping scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Stagger delay utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+
+  /*
+   * Narrow trunk shadow (coconut stem, not crown): one thin stripe + tiny soft edge  -  not a full-frame mask.
+   * Slightly steep angle reads more vertical, like a pole/trunk cast.
+   */
+  /* Multiply keeps it reading as light blocked on the photo, not a painted band */
+  .hero-diagonal-sweep.hero-diagonal-sweep-layer {
+    mix-blend-mode: multiply;
+  }
+
+  .hero-diagonal-sweep-layer {
+    /*
+     * ~4 cm apparent width (via ~3.2% span on this 118deg band over the oversized layer  -  same % unit as before).
+     * Soft only at the outer lips; long flat top stays dark toward the inner shoulders.
+     */
+    background: linear-gradient(
+      118deg,
+      transparent 0% 70.48%,
+      rgba(18, 16, 14, 0.09) 70.62%,
+      rgba(12, 10, 8, 0.22) 70.82%,
+      rgba(8, 7, 6, 0.38) 70.98%,
+      rgba(6, 5, 4, 0.48) 71.12%,
+      rgba(6, 5, 4, 0.48) 72.94%,
+      rgba(8, 7, 6, 0.38) 73.1%,
+      rgba(12, 10, 8, 0.22) 73.3%,
+      rgba(18, 16, 14, 0.09) 73.48%,
+      transparent 73.68% 100%
+    );
+  }
+
+  /* Barely-there bark/grain so it still feels organic, not a vector band */
+  .hero-diagonal-sweep.hero-diagonal-sweep-layer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: repeating-linear-gradient(
+      118deg,
+      rgba(0, 0, 0, 0.05) 0 0.5px,
+      transparent 0.5px 4px
+    );
+    mix-blend-mode: overlay;
+  }
+
+  /* Same ~4 cm target on large screens; plateau a touch wider in % so it stays readable on wide viewports */
+  @media (min-width: 640px) {
+    .hero-diagonal-sweep-layer {
+      background: linear-gradient(
+        118deg,
+        transparent 0% 70.38%,
+        rgba(18, 16, 14, 0.08) 70.55%,
+        rgba(12, 10, 8, 0.2) 70.78%,
+        rgba(8, 7, 6, 0.35) 70.95%,
+        rgba(6, 5, 4, 0.46) 71.08%,
+        rgba(6, 5, 4, 0.46) 73.05%,
+        rgba(8, 7, 6, 0.35) 73.22%,
+        rgba(12, 10, 8, 0.2) 73.42%,
+        rgba(18, 16, 14, 0.08) 73.58%,
+        transparent 73.78% 100%
+      );
+    }
+  }
+
+  /* Opacity stays full until the top; fade only in the last segment before reset */
+  .hero-diagonal-sweep {
+    animation: luxeHeroDiagonalSweep 76s linear infinite;
+    will-change: transform, opacity;
+  }
+
+  @keyframes luxeHeroDiagonalSweep {
+    0% {
+      transform: translate(-36px, -112px);
+      opacity: 0.82;
+    }
+    8% {
+      transform: translate(-155px, -228px);
+      opacity: 0.82;
+    }
+    16% {
+      transform: translate(-228px, -292px);
+      opacity: 0.82;
+    }
+    24% {
+      transform: translate(-288px, -322px);
+      opacity: 0.82;
+    }
+    /* Top of travel  -  fade out only here */
+    26% {
+      transform: translate(-292px, -330px);
+      opacity: 0.82;
+    }
+    28.3% {
+      transform: translate(-295px, -335px);
+      opacity: 0;
+    }
+    28.35% {
+      transform: translate(195px, 145px);
+      opacity: 0;
+    }
+    /* Short hop back (~1.3s @ 76s) so the stripe is visible again instead of ~9s dead air */
+    30% {
+      transform: translate(-36px, -112px);
+      opacity: 0.82;
+    }
+    52% {
+      transform: translate(-200px, -250px);
+      opacity: 0.82;
+    }
+    60% {
+      transform: translate(-270px, -305px);
+      opacity: 0.82;
+    }
+    62% {
+      transform: translate(-288px, -322px);
+      opacity: 0.82;
+    }
+    64% {
+      transform: translate(-292px, -330px);
+      opacity: 0.82;
+    }
+    66% {
+      transform: translate(-295px, -335px);
+      opacity: 0;
+    }
+    66.05% {
+      transform: translate(195px, 145px);
+      opacity: 0;
+    }
+    67.5% {
+      transform: translate(-36px, -112px);
+      opacity: 0.82;
+    }
+    100% {
+      transform: translate(-36px, -112px);
+      opacity: 0.82;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-diagonal-sweep {
+      animation: none;
+      transform: translate(-36px, -112px);
+      opacity: 0.82;
+    }
+  }
+}

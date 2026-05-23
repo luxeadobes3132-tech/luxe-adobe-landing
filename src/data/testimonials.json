@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Priya Sharma",
+    "location": "Mumbai",
+    "text": "Wayanad Gate exceeded all expectations. The misty hills, impeccable service, and serene atmosphere made our anniversary unforgettable.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Rajesh Menon",
+    "location": "Bangalore",
+    "text": "Ooty Retreat is a perfect escape from the city. The tea gardens, cool air, and warm hospitality - we will definitely return.",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Sarah & Michael",
+    "location": "Chennai",
+    "text": "From the moment we arrived, we felt welcomed. The property is stunning and the team went above and beyond to make our stay special.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Anita Krishnan",
+    "location": "Kochi",
+    "text": "Luxe Adobes truly understands luxury. Beautiful locations, thoughtful amenities, and service that feels personal.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "David Fernandes",
+    "location": "Goa",
+    "text": "We came for a weekend and left feeling rejuvenated. The attention to detail and peaceful surroundings made all the difference.",
+    "rating": 5
+  },
+  {
+    "id": 6,
+    "name": "Meera & Vikram",
+    "location": "Hyderabad",
+    "text": "Our family loved every moment. The kids enjoyed the nature trails and we appreciated the quiet luxury. Highly recommended.",
+    "rating": 5
+  }
+]

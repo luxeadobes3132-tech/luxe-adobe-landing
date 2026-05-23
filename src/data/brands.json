@@ -1,0 +1,17 @@
+[
+  {
+    "id": "langstroth",
+    "logo": "/images/brands/Langstroth.png",
+    "alt": "Langstroth"
+  },
+  {
+    "id": "spectrum",
+    "logo": "/images/brands/spectrum.png",
+    "alt": "Spectrum"
+  },
+  {
+    "id": "emerzin",
+    "logo": "/images/brands/sm-emerzin-logo-blck-bgrm.png",
+    "alt": "Emerzin"
+  }
+]

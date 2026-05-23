@@ -1,0 +1,143 @@
+[
+  {
+    "slug": "wayanad-gate",
+    "name": "WAYANAD GATE",
+    "hasDetailPage": true,
+    "logo": "/images/properties/wayanadGate_logoGreen.webp",
+    "state": "Kerala",
+    "location": "Wayanad, Kerala",
+    "address": "Wayanad Gate, Mannanthavady, Thalaserry - Mysore Rd, Kattikkulam, Kerala 670646",
+    "tagline": "Where misty hills meet timeless luxury",
+    "description": "Wayanad Gate sits on the Kerala–Karnataka border in the Western Ghats, with the Brahmagiri hills as a dramatic backdrop and Nagarhole Tiger Reserve (Rajiv Gandhi National Park) within reach for unforgettable wildlife encounters. Coffee estates, waterfalls, and forest air set the scene for curated luxury - panoramic views, restorative pools, and dining that honours the land.",
+    "about": "The property lies along the frontier where Kerala meets Karnataka, on the route toward Mysore - so you feel both states in the landscape: Ghats rainfall, open sky, and the long ridgelines of the Brahmagiri range folding into mist and evergreen forest.\n\nNagarhole Tiger Reserve is close enough for well-planned day visits - tigers, elephants, deer, and hundreds of bird species in one of south India’s finest protected habitats - while evenings return you to quiet terraces and the slower rhythm of the estate.\n\nHere, luxury is not separate from place. It is framed by borderland geography, Brahmagiri silhouettes on the horizon, and the knowledge that some of India’s richest wild country lies just beyond the gate - balanced with pools, thoughtful service, and spaces made for unhurried days.",
+    "heroImages": [
+      "/images/properties/wayanadGate/wayanad-gate-1.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-2.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-3.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-4.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-5.jpeg"
+    ],
+    "rooms": [
+      {
+        "name": "Suite rooms",
+        "icon": "suite",
+        "iconImage": "/images/properties/accommodation/Suite-rooms.png",
+        "description": "Generous suites with distinct living space, premium finishes, and views toward the Ghats - made for longer stays and slow mornings.",
+        "features": ["Separate sitting area", "Premium bath and fittings", "Valley or forest outlooks"]
+      },
+      {
+        "name": "Deluxe rooms",
+        "icon": "deluxe",
+        "iconImage": "/images/properties/accommodation/Deluxe-rooms.png",
+        "description": "Deluxe rooms balance comfort and calm: quiet interiors, natural light, and everything you need without excess.",
+        "features": ["En-suite bathroom", "Climate-controlled comfort", "Thoughtful in-room amenities"]
+      },
+      {
+        "name": "Tiny cottage",
+        "icon": "cottage",
+        "iconImage": "/images/properties/accommodation/Tiny-cottage.png",
+        "description": "Compact standalone cottages for guests who want privacy, charm, and the feeling of a small hill hideaway among the trees.",
+        "features": ["Private cottage setting", "Immersed in greenery", "Ideal for couples or solo travellers"]
+      },
+      {
+        "name": "Dormitory",
+        "icon": "dormitory",
+        "iconImage": "/images/properties/accommodation/Dormitory.png",
+        "description": "Shared dormitory beds for groups, students, and travellers who prefer simple lodging with full access to resort facilities.",
+        "features": ["Group-friendly layout", "Access to pool and dining", "Lively, social atmosphere"]
+      }
+    ],
+    "amenities": [
+      "Swimming pool",
+      "Banquet hall",
+      "Restaurant",
+      "Campfire",
+      "Outdoor and indoor games"
+    ],
+    "gallery": [
+      "/images/properties/wayanadGate/wayanad-gate-1.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-2.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-3.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-4.jpeg",
+      "/images/properties/wayanadGate/wayanad-gate-5.jpeg"
+    ],
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501479.88!2d75.9332864!3d10.9019136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5db62eab16dcf%3A0xc837f15ec6b2ee85!2sWayanad%20Gate%20Resort%2C%20Kattikkulam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1744312278000",
+    "mapShareUrl": "https://maps.app.goo.gl/UC4DTH5yUB6fyTXd9"
+  },
+  {
+    "slug": "ubuntu-retreat-ooty",
+    "name": "Ubuntu Retreat - Aaram & Mukaam",
+    "hasDetailPage": true,
+    "logo": "/images/properties/ubuntu/ubuntu-logo.png",
+    "state": "Tamil Nadu",
+    "location": "Ooty, Tamil Nadu",
+    "address": "Ooty Boathouse Road area, near Abubabaji Charitable Trust, Ooty, Tamil Nadu",
+    "tagline": "A calm homestay address in the hills of Ooty.",
+    "description": "Ubuntu Retreat Ooty is a private-villa stay near Ooty Boathouse, with easy access to town and a peaceful setting for small families and groups.",
+    "about": "Ubuntu Retreat Ooty is located near Abubabaji Charitable Trust, about 3 km from Ooty town, 2 km from Ooty Bus Stand, and around 500 m from Ooty Boathouse.\n\nThe property includes a private garden with a dedicated campfire area, creating a relaxed setting for evenings in the hills.\n\nEach villa has 2 beds and 1 bathroom, suitable for up to 4 adults in a private villa layout.",
+    "heroImages": [
+      "/images/properties/ubuntu/hero.webp",
+      "/images/properties/ubuntu/gallery/gallery-9.webp"
+    ],
+    "rooms": [
+      {
+        "name": "Private villa",
+        "description": "A private villa setup designed for up to 4 adults.",
+        "features": [
+          "2 beds in one villa",
+          "1 bathroom",
+          "Private villa occupancy up to 4 adults",
+          "Tariff: private villa pricing available on enquiry"
+        ]
+      }
+    ],
+    "amenities": [
+      "Free on-site private parking",
+      "Private garden with campfire area",
+      "Approx. 500 m from Ooty Boathouse",
+      "Approx. 2 km from Ooty Bus Stand",
+      "Approx. 3 km from Ooty town"
+    ],
+    "gallery": [
+      "/images/properties/ubuntu/gallery/gallery-2.webp",
+      "/images/properties/ubuntu/gallery/gallery-3.webp",
+      "/images/properties/ubuntu/gallery/gallery-7.webp",
+      "/images/properties/ubuntu/gallery/gallery-8.webp",
+      "/images/properties/ubuntu/gallery/gallery-9.webp",
+      "/images/properties/ubuntu/gallery/gallery-10.webp"
+    ],
+    "instagramUrl": "https://www.instagram.com/ubuntu_retreat?igsh=dWJ0dXp1YXk5dWpn",
+    "mapEmbedUrl": "https://www.google.com/maps?q=Ubuntu%20Retreat%20-%20Aaram%20%26%20Mukaam%2C%20Ooty&output=embed",
+    "mapShareUrl": "https://maps.app.goo.gl/obuNRYhXRzbLiZos7"
+  },
+  {
+    "slug": "stayaro",
+    "name": "STAYARO",
+    "hasDetailPage": false,
+    "logo": "/images/properties/stayaro-logo.webp",
+    "state": "Kerala",
+    "location": "Wayanad  -  opening soon",
+    "tagline": "An exceptional Luxe Adobes experience  -  opening soon.",
+    "description": "",
+    "heroImages": [],
+    "rooms": [],
+    "amenities": [],
+    "gallery": [],
+    "mapEmbedUrl": ""
+  },
+  {
+    "slug": "cloud-veil",
+    "name": "Cloud Veil",
+    "hasDetailPage": false,
+    "logo": "/images/properties/cloudVeil.jpeg",
+    "state": "Kerala",
+    "location": "Wayanad  -  coming soon",
+    "tagline": "An exceptional Luxe Adobes experience  -  opening soon.",
+    "description": "",
+    "heroImages": [],
+    "rooms": [],
+    "amenities": [],
+    "gallery": [],
+    "mapEmbedUrl": ""
+  }
+]

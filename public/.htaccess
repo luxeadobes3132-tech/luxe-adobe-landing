@@ -1,0 +1,14 @@
+# Apache / Hostinger  -  SPA fallback: real files pass through; everything else → index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Do not rewrite the entry file itself
+  RewriteRule ^index\.html$ - [L]
+
+  # Leave existing files and directories untouched (images, assets, robots.txt, sitemap.xml, …)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteRule ^ index.html [L]
+</IfModule>

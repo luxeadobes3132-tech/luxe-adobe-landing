@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Mohammed Reyas",
+    "role": "Founder & Managing Director",
+    "bio": "Civil engineer and visionary leader focused on responsible growth, meaningful guest experiences, and social-impact initiatives.",
+    "image": "/images/about/team/Mohammed Reyas.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Rizvana",
+    "role": "Chairman",
+    "bio": "Civil engineer guiding strategic direction with a strong emphasis on quality, trust, and long-term value in hospitality development.",
+    "image": "/images/about/team/Rizvana.webp"
+  },
+  {
+    "id": 3,
+    "name": "Mohamed Raihan",
+    "role": "CEO",
+    "bio": "Mechanical engineer driving operations excellence, innovation, and performance to deliver consistently elevated guest experiences.",
+    "image": "/images/about/team/Mohamed Raihan.webp"
+  }
+]
