@@ -11,7 +11,7 @@ export const DESTINATIONS = [
     regionLabel: 'Western Ghats, Kerala',
     heroImage: WAYANAD_DESTINATION_IMAGES.hero,
     pageHeaderVariant: 'wayanad',
-    propertySlugs: ['wayanad-gate'],
+    propertySlugs: ['wayanad-gate', 'stayaro', 'cloud-veil'],
     seo: {
       title: 'Wayanad Resorts | Luxury Resort in Wayanad, Kerala | Luxe Adobes',
       description:
@@ -91,7 +91,7 @@ export const DESTINATIONS = [
       },
       {
         title: 'Central yet quiet',
-        body: 'Roughly 500 m from Ooty Boathouse, 2 km from the bus stand, and 3 km from town — close enough for sightseeing, removed enough for rest.',
+        body: "Just 500 m from Ooty Boathouse, 2 km from the bus stand, and 3 km from town, it's ideally positioned for exploring Ooty while offering a quiet retreat at the end of the day.",
       },
       {
         title: 'Luxe Adobes hospitality',

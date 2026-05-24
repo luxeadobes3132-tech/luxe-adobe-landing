@@ -23,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 import Footer from '../components/layout/Footer';
 import Section from '../components/ui/Section';
 import Button from '../components/ui/Button';
+import DestinationExploreCta from '../components/ui/DestinationExploreCta';
 import PropertyCard from '../components/property/PropertyCard';
 import SectionTitle from '../components/ui/SectionTitle';
 import GuestTestimonialsCarousel from '../components/ui/GuestTestimonialsCarousel';
@@ -839,41 +840,10 @@ function Home() {
             </div>
           </div>
 
-                  <div className="text-center mt-12">
-                    <p className="font-sans text-xs uppercase tracking-[0.3em] text-gold/80 mb-4">Discover Resorts</p>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                      <Button
-                        to="/destinations/wayanad"
-                        variant="secondary"
-                        className="border-gold/40 text-warm hover:bg-gold/10"
-                      >
-                        Wayanad resorts
-                      </Button>
-                      <Button
-                        to="/property/wayanad-gate"
-                        variant="primary"
-                        className="border-0 bg-gold/90 text-charcoal hover:bg-gold"
-                      >
-                        WAYANAD GATE
-                      </Button>
-                      <Button
-                        type="button"
-                        disabled
-                        variant="primary"
-                        className="bg-charcoal/25 text-warm/70 border-0 cursor-not-allowed hover:scale-100"
-                      >
-                        STAYARO
-                      </Button>
-                      <Button
-                        type="button"
-                        disabled
-                        variant="primary"
-                        className="bg-charcoal/25 text-warm/70 border-0 cursor-not-allowed hover:scale-100"
-                      >
-                        CLOUD VEIL
-                      </Button>
-                    </div>
-                  </div>
+                  <DestinationExploreCta
+                    to="/destinations/wayanad"
+                    label="Explore Wayanad resorts"
+                  />
                 </motion.div>
               )}
               {activeDestination === 1 && (
@@ -918,25 +888,10 @@ function Home() {
                       <div className="absolute inset-0 border border-gold/20 rounded-xl lg:rounded-2xl pointer-events-none" />
                     </div>
                   </div>
-                  <div className="text-center mt-10">
-                    <p className="font-sans text-xs uppercase tracking-[0.3em] text-gold/80 mb-4">Discover Resorts</p>
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                      <Button
-                        to="/destinations/ooty"
-                        variant="secondary"
-                        className="border-gold/40 text-warm hover:bg-gold/10"
-                      >
-                        Ooty resorts
-                      </Button>
-                      <Button
-                        to="/property/ubuntu-retreat-ooty"
-                        variant="primary"
-                        className="border-0 bg-gold/90 text-charcoal hover:bg-gold"
-                      >
-                        UBUNTU RETREAT
-                      </Button>
-                    </div>
-                  </div>
+                  <DestinationExploreCta
+                    to="/destinations/ooty"
+                    label="Explore Ooty resorts"
+                  />
                 </motion.div>
               )}
             </AnimatePresence>

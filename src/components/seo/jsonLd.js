@@ -246,9 +246,8 @@ export function destinationFaqJsonLd(destination) {
 }
 
 export function destinationJsonLd(destination) {
-  const properties = indexableProperties.filter((p) =>
-    destination.propertySlugs.includes(p.slug)
-  );
+  const properties = propertiesData.filter((p) => destination.propertySlugs.includes(p.slug));
+  const destinationUrl = absoluteUrl(`/destinations/${destination.slug}`);
 
   const blocks = [
     organizationJsonLd(),
@@ -284,7 +283,9 @@ export function destinationJsonLd(destination) {
         '@type': 'ListItem',
         position: index + 1,
         name: property.name,
-        url: absoluteUrl(`/property/${property.slug}`),
+        url: property.hasDetailPage
+          ? absoluteUrl(`/property/${property.slug}`)
+          : destinationUrl,
       })),
     });
   }

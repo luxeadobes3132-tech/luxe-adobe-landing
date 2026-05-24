@@ -15,9 +15,13 @@ import NotFound from './NotFound';
 const GALLERY_SIZES = '(max-width: 768px) 100vw, 33vw';
 
 function DestinationView({ destination }) {
-  const properties = propertiesData.filter(
-    (p) => destination.propertySlugs.includes(p.slug) && p.hasDetailPage
-  );
+  const properties = propertiesData.filter((p) => destination.propertySlugs.includes(p.slug));
+  const gridCols =
+    properties.length >= 3
+      ? 'sm:grid-cols-2 lg:grid-cols-3'
+      : properties.length === 2
+        ? 'md:grid-cols-2'
+        : 'max-w-md mx-auto';
 
   return (
     <div className="min-h-screen bg-warm">
@@ -86,12 +90,12 @@ function DestinationView({ destination }) {
         <section className="border-t border-sand/60 py-14 lg:py-16">
           <div className="mx-auto max-w-6xl px-4 lg:px-8">
             <h2 className="font-serif text-2xl lg:text-3xl text-charcoal text-center mb-3">
-              {destination.name} properties
+              {destination.name} resorts
             </h2>
             <p className="font-sans text-sm text-soft text-center mb-10 max-w-2xl mx-auto">
-              Explore Luxe Adobes resorts in {destination.regionLabel}. Enquire for availability, room types, and rates.
+              All Luxe Adobes stays in {destination.regionLabel}. Open properties accept enquiries; upcoming resorts are listed below.
             </p>
-            <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+            <div className={`grid gap-8 max-w-6xl mx-auto ${gridCols}`}>
               {properties.map((property) => (
                 <PropertyCard key={property.slug} property={property} />
               ))}
