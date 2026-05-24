@@ -62,7 +62,8 @@
       "/images/properties/wayanadGate/wayanad-gate-5.jpeg"
     ],
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501479.88!2d75.9332864!3d10.9019136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba5db62eab16dcf%3A0xc837f15ec6b2ee85!2sWayanad%20Gate%20Resort%2C%20Kattikkulam%2C%20Kerala!5e0!3m2!1sen!2sin!4v1744312278000",
-    "mapShareUrl": "https://maps.app.goo.gl/UC4DTH5yUB6fyTXd9"
+    "mapShareUrl": "https://maps.app.goo.gl/UC4DTH5yUB6fyTXd9",
+    "geo": { "latitude": 11.6774, "longitude": 76.0953 }
   },
   {
     "slug": "ubuntu-retreat-ooty",
@@ -108,7 +109,8 @@
     ],
     "instagramUrl": "https://www.instagram.com/ubuntu_retreat?igsh=dWJ0dXp1YXk5dWpn",
     "mapEmbedUrl": "https://www.google.com/maps?q=Ubuntu%20Retreat%20-%20Aaram%20%26%20Mukaam%2C%20Ooty&output=embed",
-    "mapShareUrl": "https://maps.app.goo.gl/obuNRYhXRzbLiZos7"
+    "mapShareUrl": "https://maps.app.goo.gl/obuNRYhXRzbLiZos7",
+    "geo": { "latitude": 11.4064, "longitude": 76.6932 }
   },
   {
     "slug": "stayaro",

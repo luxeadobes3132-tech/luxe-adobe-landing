@@ -10,8 +10,10 @@ import {
   useAnimationControls,
 } from 'framer-motion';
 import Seo from '../components/seo/Seo';
+import FaqSection from '../components/seo/FaqSection';
 import { homeJsonLd } from '../components/seo/jsonLd';
 import { PAGE_SEO } from '../data/siteSeo';
+import { SITE_FAQS } from '../data/siteFaqs';
 import { useRef, useEffect, useState, useLayoutEffect, useMemo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -841,6 +843,13 @@ function Home() {
                     <p className="font-sans text-xs uppercase tracking-[0.3em] text-gold/80 mb-4">Discover Resorts</p>
                     <div className="flex flex-wrap items-center justify-center gap-3">
                       <Button
+                        to="/destinations/wayanad"
+                        variant="secondary"
+                        className="border-gold/40 text-warm hover:bg-gold/10"
+                      >
+                        Wayanad resorts
+                      </Button>
+                      <Button
                         to="/property/wayanad-gate"
                         variant="primary"
                         className="border-0 bg-gold/90 text-charcoal hover:bg-gold"
@@ -912,6 +921,13 @@ function Home() {
                   <div className="text-center mt-10">
                     <p className="font-sans text-xs uppercase tracking-[0.3em] text-gold/80 mb-4">Discover Resorts</p>
                     <div className="flex flex-wrap items-center justify-center gap-3">
+                      <Button
+                        to="/destinations/ooty"
+                        variant="secondary"
+                        className="border-gold/40 text-warm hover:bg-gold/10"
+                      >
+                        Ooty resorts
+                      </Button>
                       <Button
                         to="/property/ubuntu-retreat-ooty"
                         variant="primary"
@@ -1071,6 +1087,8 @@ function Home() {
       </section>
 
       <BrandsShowcase />
+
+      <FaqSection title="Questions about Luxe Adobes resorts" faqs={SITE_FAQS} />
 
       <Footer />
     </div>

@@ -172,6 +172,27 @@ function Properties() {
         </Section>
       )}
 
+      <Section className="bg-sand/40 border-t border-sand/60" id="destinations">
+        <div className="max-w-[90vw] mx-auto px-4 lg:px-8 text-center">
+          <SectionTitle
+            title="Explore by destination"
+            subtitle="Luxury resort guides for Wayanad, Ooty, and Kerala"
+            align="center"
+          />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button to="/destinations/wayanad" variant="primary">
+              Wayanad resorts
+            </Button>
+            <Button to="/destinations/ooty" variant="secondary">
+              Ooty resorts
+            </Button>
+            <Button to="/destinations/kerala" variant="secondary">
+              Kerala resorts
+            </Button>
+          </div>
+        </div>
+      </Section>
+
       <Footer />
     </div>
   );

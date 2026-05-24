@@ -4,8 +4,14 @@ import { isInitialLoadComplete, runInitialBootstrap } from '../../utils/imageCac
 
 const SPLASH_FADE_MS = 320;
 
+function shouldSkipSplash() {
+  if (isInitialLoadComplete()) return true;
+  if (typeof window === 'undefined') return false;
+  return new URLSearchParams(window.location.search).has('_prerender');
+}
+
 export default function InitialLoadGate({ children }) {
-  const skipSplash = isInitialLoadComplete();
+  const skipSplash = shouldSkipSplash();
   const [ready, setReady] = useState(skipSplash);
   const [showSplash, setShowSplash] = useState(!skipSplash);
   const [progress, setProgress] = useState(0.04);

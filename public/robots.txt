@@ -1,5 +1,52 @@
 # https://www.robotstxt.org/robotstxt.html
+# Luxe Adobes — allow search engines and AI crawlers
+
 User-agent: *
 Allow: /
 
-Sitemap: https://luxeadobes.com/sitemap.xml
+# OpenAI (ChatGPT browsing & training crawler)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google (Gemini / AI Overviews — Google-Extended controls AI training use)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft / Copilot (uses Bing index)
+User-agent: Bingbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# AI discovery files (llmstxt.org)
+# https://www.luxeadobes.com/llms.txt
+# https://www.luxeadobes.com/llms-full.txt
+
+Sitemap: https://www.luxeadobes.com/sitemap.xml

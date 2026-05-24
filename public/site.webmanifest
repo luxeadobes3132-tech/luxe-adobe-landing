@@ -1,0 +1,21 @@
+{
+  "name": "Luxe Adobes",
+  "short_name": "Luxe Adobes",
+  "description": "Luxury resorts in Wayanad, Kerala and Ooty, Tamil Nadu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1c1c",
+  "theme_color": "#1c1c1c",
+  "icons": [
+    {
+      "src": "/images/fav/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/fav/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

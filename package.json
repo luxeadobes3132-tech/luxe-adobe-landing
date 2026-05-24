@@ -9,8 +9,11 @@
     "images:heroes": "node scripts/compress-heroes.mjs && npm run images:build",
     "images:compress": "node scripts/compress-images.mjs && node scripts/finalize-compression.mjs && node scripts/apply-compression-map.mjs && node scripts/compress-jpeg-inplace.mjs && npm run images:build",
     "seo:sitemap": "node scripts/generate-sitemap.mjs",
-    "prebuild": "npm run images:build && npm run seo:sitemap",
-    "build": "vite build",
+    "seo:favicons": "node scripts/generate-favicons.mjs",
+    "seo:og-image": "node scripts/generate-og-image.mjs",
+    "seo:llms": "node scripts/generate-llms.mjs",
+    "prebuild": "npm run seo:favicons && npm run seo:og-image && npm run seo:llms && npm run images:build && npm run seo:sitemap",
+    "build": "vite build && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -35,6 +38,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
     "postcss": "^8.4.31",
+    "puppeteer": "^25.0.4",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.3.5",
     "vite": "^5.0.0"

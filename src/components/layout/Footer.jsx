@@ -43,7 +43,7 @@ function Footer() {
   return (
     <footer className="bg-charcoal text-warm">
       <div className="max-w-[90vw] mx-auto px-4 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
           <div>
             <Link
@@ -87,6 +87,28 @@ function Footer() {
               <li>
                 <Link to="/contact" className="text-warm/80 hover:text-gold transition text-sm">
                   Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Destinations */}
+          <div>
+            <h4 className="font-serif text-lg mb-4">Destinations</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/destinations/wayanad" className="text-warm/80 hover:text-gold transition text-sm">
+                  Wayanad Resorts
+                </Link>
+              </li>
+              <li>
+                <Link to="/destinations/ooty" className="text-warm/80 hover:text-gold transition text-sm">
+                  Ooty Resorts
+                </Link>
+              </li>
+              <li>
+                <Link to="/destinations/kerala" className="text-warm/80 hover:text-gold transition text-sm">
+                  Kerala Resorts
                 </Link>
               </li>
             </ul>

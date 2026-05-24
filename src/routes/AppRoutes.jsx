@@ -5,6 +5,7 @@ import PageLoader from '../components/ui/PageLoader';
 import Home from '../pages/Home';
 const About = lazy(() => import('../pages/About'));
 const Properties = lazy(() => import('../pages/Properties'));
+const Destination = lazy(() => import('../pages/Destination'));
 const PropertyDetail = lazy(() => import('../pages/PropertyDetail'));
 const Contact = lazy(() => import('../pages/Contact'));
 const NotFound = lazy(() => import('../pages/NotFound'));
@@ -18,6 +19,7 @@ function AppRoutes() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/properties" element={<Properties />} />
+          <Route path="/destinations/:slug" element={<Destination />} />
           <Route path="/property/:slug" element={<PropertyDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

@@ -1,4 +1,6 @@
 import propertiesData from '../../data/properties.json';
+import { getDestinationSlugs } from '../../data/destinations';
+import { SITE_FAQS } from '../../data/siteFaqs';
 import {
   SITE_EMAIL,
   SITE_INSTAGRAM,
@@ -25,6 +27,20 @@ export function organizationJsonLd() {
     email: SITE_EMAIL,
     telephone: phone,
     sameAs: [SITE_INSTAGRAM.url],
+    knowsAbout: [
+      'Luxury resorts',
+      'Wayanad resorts',
+      'Ooty resorts',
+      'Kerala hospitality',
+      'Nilgiri hill stays',
+    ],
+    areaServed: [
+      { '@type': 'Country', name: 'India' },
+      { '@type': 'AdministrativeArea', name: 'Kerala' },
+      { '@type': 'AdministrativeArea', name: 'Tamil Nadu' },
+      { '@type': 'City', name: 'Wayanad' },
+      { '@type': 'City', name: 'Ooty' },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: SITE_ADDRESS.lines[0],
@@ -42,7 +58,7 @@ export function websiteJsonLd() {
     '@type': 'WebSite',
     '@id': `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: SITE_TAGLINE,
+    alternateName: [SITE_TAGLINE, 'Luxe Adobes Resorts', 'Luxe Adobes Kerala'],
     url: SITE_URL,
     publisher: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-IN',
@@ -57,8 +73,40 @@ export function websiteJsonLd() {
   };
 }
 
+export function faqJsonLd(faqs) {
+  if (!faqs?.length) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
 export function homeJsonLd() {
-  return [organizationJsonLd(), websiteJsonLd()];
+  const blocks = [organizationJsonLd(), websiteJsonLd()];
+  const faq = faqJsonLd(SITE_FAQS);
+  if (faq) blocks.push(faq);
+
+  blocks.push({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Luxe Adobes luxury resorts',
+    itemListElement: indexableProperties.map((property, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: property.name,
+      url: absoluteUrl(`/property/${property.slug}`),
+    })),
+  });
+
+  return blocks;
 }
 
 export function localBusinessJsonLd() {
@@ -145,6 +193,15 @@ export function lodgingBusinessJsonLd(property) {
       name,
       value: true,
     })),
+    ...(property.geo
+      ? {
+          geo: {
+            '@type': 'GeoCoordinates',
+            latitude: property.geo.latitude,
+            longitude: property.geo.longitude,
+          },
+        }
+      : {}),
     ...(property.mapShareUrl ? { hasMap: property.mapShareUrl } : {}),
   };
 }
@@ -157,9 +214,88 @@ export function propertyJsonLd(property) {
   ];
 }
 
+export function destinationBreadcrumbJsonLd(destination) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: SITE_URL,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Destinations',
+        item: absoluteUrl('/properties'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: destination.name,
+        item: absoluteUrl(`/destinations/${destination.slug}`),
+      },
+    ],
+  };
+}
+
+export function destinationFaqJsonLd(destination) {
+  return faqJsonLd(destination.faqs);
+}
+
+export function destinationJsonLd(destination) {
+  const properties = indexableProperties.filter((p) =>
+    destination.propertySlugs.includes(p.slug)
+  );
+
+  const blocks = [
+    organizationJsonLd(),
+    destinationBreadcrumbJsonLd(destination),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': absoluteUrl(`/destinations/${destination.slug}#page`),
+      name: destination.headline,
+      description: destination.intro,
+      url: absoluteUrl(`/destinations/${destination.slug}`),
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      about: {
+        '@type': 'Place',
+        name: destination.name,
+        containedInPlace: {
+          '@type': 'AdministrativeArea',
+          name: destination.state,
+        },
+      },
+    },
+  ];
+
+  const faq = destinationFaqJsonLd(destination);
+  if (faq) blocks.push(faq);
+
+  if (properties.length) {
+    blocks.push({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: `Luxe Adobes resorts in ${destination.name}`,
+      itemListElement: properties.map((property, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: property.name,
+        url: absoluteUrl(`/property/${property.slug}`),
+      })),
+    });
+  }
+
+  return blocks;
+}
+
 /** All indexable paths for sitemap generation */
 export function getIndexablePaths() {
   const staticPaths = ['/', '/about', '/properties', '/contact'];
+  const destinationPaths = getDestinationSlugs().map((slug) => `/destinations/${slug}`);
   const propertyPaths = indexableProperties.map((p) => `/property/${p.slug}`);
-  return [...staticPaths, ...propertyPaths];
+  return [...staticPaths, ...destinationPaths, ...propertyPaths];
 }

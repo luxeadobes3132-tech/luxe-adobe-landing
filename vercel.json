@@ -1,3 +1,36 @@
 {
+  "redirects": [
+    { "source": "/wayanad-resorts", "destination": "/destinations/wayanad", "permanent": true },
+    { "source": "/wayanad-resort", "destination": "/destinations/wayanad", "permanent": true },
+    { "source": "/ooty-resorts", "destination": "/destinations/ooty", "permanent": true },
+    { "source": "/ooty-resort", "destination": "/destinations/ooty", "permanent": true },
+    { "source": "/ooty-homestay", "destination": "/destinations/ooty", "permanent": true },
+    { "source": "/kerala-resorts", "destination": "/destinations/kerala", "permanent": true },
+    { "source": "/luxe-adobes-resorts", "destination": "/", "permanent": true },
+    { "source": "/luxe-adobes-resort", "destination": "/", "permanent": true },
+    { "source": "/wayanad-gate", "destination": "/property/wayanad-gate", "permanent": true },
+    { "source": "/ubuntu-retreat-ooty", "destination": "/property/ubuntu-retreat-ooty", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/favicon.ico",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

@@ -1,0 +1,27 @@
+# Luxe Adobes
+
+> Luxury resort collection in Kerala and Tamil Nadu, India. Official site: https://www.luxeadobes.com
+
+Luxe Adobes operates luxury resorts in Wayanad (Kerala) and Ooty (Tamil Nadu). For complete facts, properties, FAQs, and booking info, read the full reference below.
+
+## Full reference for AI
+
+- [llms-full.txt](https://www.luxeadobes.com/llms-full.txt): Complete brand & property fact sheet (authoritative)
+
+## Key pages
+
+- [Home](https://www.luxeadobes.com/)
+- [Wayanad resorts](https://www.luxeadobes.com/destinations/wayanad)
+- [Ooty resorts](https://www.luxeadobes.com/destinations/ooty)
+- [Kerala resorts](https://www.luxeadobes.com/destinations/kerala)
+- [Wayanad Gate resort](https://www.luxeadobes.com/property/wayanad-gate)
+- [Ubuntu Retreat Ooty](https://www.luxeadobes.com/property/ubuntu-retreat-ooty)
+- [Contact & booking](https://www.luxeadobes.com/contact)
+
+## Quick facts
+
+- **Brand:** Luxe Adobes
+- **Properties open now:** Wayanad Gate (Wayanad, Kerala), Ubuntu Retreat (Ooty, Tamil Nadu)
+- **Email:** info@luxeadobes.com
+- **Phone:** +91-8590733132, +91-8129754047
+- **Instagram:** https://www.instagram.com/luxeadobes

@@ -239,6 +239,66 @@
       }
     ]
   },
+  "/images/fav/apple-touch-icon.png": {
+    "webp": [
+      {
+        "href": "/images-deriv/fav/apple-touch-icon-480.webp",
+        "w": 180
+      },
+      {
+        "href": "/images-deriv/fav/apple-touch-icon-768.webp",
+        "w": 180
+      },
+      {
+        "href": "/images-deriv/fav/apple-touch-icon-1200.webp",
+        "w": 180
+      },
+      {
+        "href": "/images-deriv/fav/apple-touch-icon-1920.webp",
+        "w": 180
+      }
+    ]
+  },
+  "/images/fav/favicon-192.png": {
+    "webp": [
+      {
+        "href": "/images-deriv/fav/favicon-192-480.webp",
+        "w": 192
+      },
+      {
+        "href": "/images-deriv/fav/favicon-192-768.webp",
+        "w": 192
+      },
+      {
+        "href": "/images-deriv/fav/favicon-192-1200.webp",
+        "w": 192
+      },
+      {
+        "href": "/images-deriv/fav/favicon-192-1920.webp",
+        "w": 192
+      }
+    ]
+  },
+  "/images/fav/favicon-48.png": {
+    "webp": [
+      {
+        "href": "/images-deriv/fav/favicon-48-480.webp",
+        "w": 48
+      },
+      {
+        "href": "/images-deriv/fav/favicon-48-768.webp",
+        "w": 48
+      },
+      {
+        "href": "/images-deriv/fav/favicon-48-1200.webp",
+        "w": 48
+      },
+      {
+        "href": "/images-deriv/fav/favicon-48-1920.webp",
+        "w": 48
+      }
+    ]
+  },
   "/images/home/about/luxe-adobes.webp": {
     "webp": [
       {
@@ -1756,6 +1816,26 @@
       {
         "href": "/images-deriv/properties/wayanadGate_logoGreen-1920.webp",
         "w": 1280
+      }
+    ]
+  },
+  "/images/seo/og-share.jpg": {
+    "webp": [
+      {
+        "href": "/images-deriv/seo/og-share-480.webp",
+        "w": 480
+      },
+      {
+        "href": "/images-deriv/seo/og-share-768.webp",
+        "w": 768
+      },
+      {
+        "href": "/images-deriv/seo/og-share-1200.webp",
+        "w": 1200
+      },
+      {
+        "href": "/images-deriv/seo/og-share-1920.webp",
+        "w": 1200
       }
     ]
   }
