@@ -13,7 +13,6 @@ Luxe Adobes operates luxury resorts in Wayanad (Kerala) and Ooty (Tamil Nadu). F
 - [Home](https://www.luxeadobes.com/)
 - [Wayanad resorts](https://www.luxeadobes.com/destinations/wayanad)
 - [Ooty resorts](https://www.luxeadobes.com/destinations/ooty)
-- [Kerala resorts](https://www.luxeadobes.com/destinations/kerala)
 - [Wayanad Gate resort](https://www.luxeadobes.com/property/wayanad-gate)
 - [Ubuntu Retreat Ooty](https://www.luxeadobes.com/property/ubuntu-retreat-ooty)
 - [Contact & booking](https://www.luxeadobes.com/contact)

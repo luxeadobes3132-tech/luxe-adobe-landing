@@ -6,7 +6,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const properties = require('../src/data/properties.json');
 
-const DESTINATION_SLUGS = ['wayanad', 'ooty', 'kerala'];
+const DESTINATION_SLUGS = ['wayanad', 'ooty'];
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');

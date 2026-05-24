@@ -176,7 +176,7 @@ function Properties() {
         <div className="max-w-[90vw] mx-auto px-4 lg:px-8 text-center">
           <SectionTitle
             title="Explore by destination"
-            subtitle="Luxury resort guides for Wayanad, Ooty, and Kerala"
+            subtitle="Luxury resort guides for Wayanad and Ooty"
             align="center"
           />
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -185,9 +185,6 @@ function Properties() {
             </Button>
             <Button to="/destinations/ooty" variant="secondary">
               Ooty resorts
-            </Button>
-            <Button to="/destinations/kerala" variant="secondary">
-              Kerala resorts
             </Button>
           </div>
         </div>

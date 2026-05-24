@@ -21,7 +21,6 @@ const ROUTES = [
   '/contact',
   '/destinations/wayanad',
   '/destinations/ooty',
-  '/destinations/kerala',
   '/property/wayanad-gate',
   '/property/ubuntu-retreat-ooty',
 ];

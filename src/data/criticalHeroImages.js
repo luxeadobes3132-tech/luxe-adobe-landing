@@ -16,7 +16,6 @@ export const PAGE_HEADER_IMAGES = {
   contact: WAYANAD_DESTINATION_IMAGES.greenHills,
   wayanad: WAYANAD_DESTINATION_IMAGES.hero,
   ooty: OOTY_DESTINATION_IMAGES.hero,
-  kerala: WAYANAD_DESTINATION_IMAGES.backwaters,
 };
 
 /** Unique source paths for every route hero / header LCP. */

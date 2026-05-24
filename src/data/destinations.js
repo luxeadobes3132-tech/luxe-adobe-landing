@@ -126,62 +126,6 @@ export const DESTINATIONS = [
       },
     ],
   },
-  {
-    slug: 'kerala',
-    name: 'Kerala',
-    state: 'Kerala',
-    regionLabel: 'India',
-    heroImage: WAYANAD_DESTINATION_IMAGES.backwaters,
-    pageHeaderVariant: 'kerala',
-    propertySlugs: ['wayanad-gate'],
-    seo: {
-      title: 'Kerala Luxury Resorts | Wayanad Gate by Luxe Adobes',
-      description:
-        'Luxe Adobes luxury resorts in Kerala — stay at Wayanad Gate in the Western Ghats with pools, dining & Ghats views. Kerala hill-station hospitality by Luxe Adobes.',
-      keywords:
-        'kerala resorts, luxury resort kerala, kerala hill station resort, luxe adobes kerala, wayanad gate kerala, best resort kerala',
-    },
-    headline: 'Luxury Resorts in Kerala',
-    subtitle: 'Hill-country hospitality from Luxe Adobes in the Western Ghats',
-    intro:
-      'Kerala is celebrated for backwaters, spice country, and misty Western Ghats escapes. Luxe Adobes currently welcomes guests at Wayanad Gate in Wayanad district — a luxury resort among coffee estates and rainforest, with more Kerala destinations opening soon under the Luxe Adobes name.',
-    highlights: [
-      {
-        title: 'Wayanad Gate — open now',
-        body: 'Our flagship Kerala resort sits on the Kerala–Karnataka border with suites, cottages, pool, restaurant, and access to Nagarhole wildlife country.',
-      },
-      {
-        title: 'Expanding across Kerala',
-        body: 'Stayaro and Cloud Veil — upcoming Luxe Adobes properties in Wayanad — will extend our Kerala collection with the same design-led, service-first approach.',
-      },
-      {
-        title: 'Enquire across the collection',
-        body: 'One Luxe Adobes team handles reservations for all Kerala and Tamil Nadu properties — phone, email, and WhatsApp, seven days a week.',
-      },
-    ],
-    galleryImages: [
-      { src: WAYANAD_DESTINATION_IMAGES.hero, alt: 'Wayanad misty hills, Kerala' },
-      { src: WAYANAD_DESTINATION_IMAGES.backwaters, alt: 'Kerala backwaters and waterways' },
-      { src: WAYANAD_DESTINATION_IMAGES.mountains, alt: 'Western Ghats, Kerala' },
-    ],
-    faqs: [
-      {
-        question: 'Where are Luxe Adobes resorts in Kerala?',
-        answer:
-          'Luxe Adobes operates Wayanad Gate in Wayanad, Kerala. Additional Wayanad properties — Stayaro and Cloud Veil — are opening soon.',
-      },
-      {
-        question: 'Is Luxe Adobes a Kerala resort brand?',
-        answer:
-          'Luxe Adobes is a luxury resort collection with properties in Kerala and Tamil Nadu. The head office is in Kottakkal, Kerala.',
-      },
-      {
-        question: 'How do I find Luxe Adobes when searching for Kerala resorts?',
-        answer:
-          'Search "Luxe Adobes", "Wayanad Gate", or visit luxeadobes.com/destinations/kerala and luxeadobes.com/destinations/wayanad for our Kerala resort pages.',
-      },
-    ],
-  },
 ];
 
 export function getDestinationBySlug(slug) {

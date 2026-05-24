@@ -107,7 +107,6 @@ ${upcoming.map((p) => `- **${p.name}** — ${p.location}. Status: opening soon. 
 
 - Wayanad resorts guide: ${url('/destinations/wayanad')}
 - Ooty resorts guide: ${url('/destinations/ooty')}
-- Kerala resorts guide: ${url('/destinations/kerala')}
 
 ## Frequently asked questions
 
@@ -138,7 +137,6 @@ Call ${BRAND.phones[0]}, email ${BRAND.email}, WhatsApp, or use ${url('/contact'
 | Ubuntu Retreat Ooty | ${url('/property/ubuntu-retreat-ooty')} |
 | Wayanad destination | ${url('/destinations/wayanad')} |
 | Ooty destination | ${url('/destinations/ooty')} |
-| Kerala destination | ${url('/destinations/kerala')} |
 | Sitemap | ${url('/sitemap.xml')} |
 
 ## Citation guidance for AI
@@ -166,7 +164,6 @@ ${BRAND.name} operates luxury resorts in Wayanad (Kerala) and Ooty (Tamil Nadu).
 - [Home](${url('/')})
 - [Wayanad resorts](${url('/destinations/wayanad')})
 - [Ooty resorts](${url('/destinations/ooty')})
-- [Kerala resorts](${url('/destinations/kerala')})
 - [Wayanad Gate resort](${url('/property/wayanad-gate')})
 - [Ubuntu Retreat Ooty](${url('/property/ubuntu-retreat-ooty')})
 - [Contact & booking](${url('/contact')})

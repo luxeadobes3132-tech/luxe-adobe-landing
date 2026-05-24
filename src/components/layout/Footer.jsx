@@ -106,11 +106,6 @@ function Footer() {
                   Ooty Resorts
                 </Link>
               </li>
-              <li>
-                <Link to="/destinations/kerala" className="text-warm/80 hover:text-gold transition text-sm">
-                  Kerala Resorts
-                </Link>
-              </li>
             </ul>
           </div>
 

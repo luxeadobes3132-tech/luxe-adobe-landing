@@ -7,7 +7,6 @@ const NAV_ITEMS = [
   { key: 'home', to: '/', label: 'Home' },
   { key: 'about', to: '/about', label: 'About' },
   { key: 'properties', to: '/properties', label: 'Properties' },
-  { key: 'destinations', to: '/properties#destinations', label: 'Destinations' },
   { key: 'contact', to: '/contact', label: 'Contact' },
 ];
 
