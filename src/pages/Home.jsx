@@ -914,12 +914,17 @@ function Home() {
             align="center"
           />
           
-          <div className="flex items-stretch gap-3 overflow-x-auto pb-2 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0 lg:grid-cols-3">
-            {featuredProperties.map((property) => (
-              <div key={property.slug} className="min-w-[min(80vw,260px)] shrink-0 snap-start md:min-w-0 md:shrink md:w-auto">
-                <PropertyCard property={property} />
-              </div>
-            ))}
+          <div className="-mx-4 overflow-x-auto overscroll-x-contain scroll-smooth px-4 pb-2 touch-pan-x snap-x snap-mandatory scrollbar-hide md:mx-0 md:overflow-visible md:px-0 md:pb-0">
+            <div className="flex w-max items-stretch gap-3 md:w-full md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+              {featuredProperties.map((property) => (
+                <div
+                  key={property.slug}
+                  className="w-[min(calc(100vw-2rem),320px)] shrink-0 snap-center md:w-auto md:min-w-0 md:shrink"
+                >
+                  <PropertyCard property={property} featured />
+                </div>
+              ))}
+            </div>
           </div>
           
           <div className="text-center mt-12">
