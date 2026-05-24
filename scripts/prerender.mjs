@@ -85,6 +85,11 @@ async function prerenderRoute(page, baseUrl, route) {
 }
 
 async function main() {
+  if (process.env.VERCEL) {
+    console.log('[prerender] skipped on Vercel — Chrome is not available in the build environment');
+    return;
+  }
+
   const baseUrl = `http://${PREVIEW_HOST}:${PORT}`;
   const preview = await startPreview();
 

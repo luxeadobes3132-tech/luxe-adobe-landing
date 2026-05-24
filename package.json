@@ -13,7 +13,9 @@
     "seo:og-image": "node scripts/generate-og-image.mjs",
     "seo:llms": "node scripts/generate-llms.mjs",
     "prebuild": "npm run seo:favicons && npm run seo:og-image && npm run seo:llms && npm run images:build && npm run seo:sitemap",
-    "build": "vite build && node scripts/prerender.mjs",
+    "build": "vite build",
+    "prerender": "node scripts/prerender.mjs",
+    "build:prerender": "npm run build && npm run prerender",
     "lint": "eslint .",
     "preview": "vite preview"
   },
