@@ -31,6 +31,10 @@
     {
       "source": "/favicon.ico",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "source": "/(favicon-.*\\.png|apple-touch-icon\\.png|android-chrome-.*\\.png)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
     }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
