@@ -193,8 +193,13 @@ function patchHead(html, { title, description, path, keywords }) {
   return out;
 }
 
-function injectRoot(html, body) {
-  return html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+function injectCrawlContent(html, body) {
+  const block = `<div id="crawl-content" hidden aria-hidden="true">${body}</div>\n    <div id="root"></div>`;
+  const legacyInRoot = /<div id="root"><main id="crawl-content"[\s\S]*?<\/main><\/div>/;
+  if (legacyInRoot.test(html)) {
+    return html.replace(legacyInRoot, block);
+  }
+  return html.replace('<div id="root"></div>', block);
 }
 
 function crawlableShell(title, sections, path) {
@@ -327,7 +332,7 @@ function main() {
 
   for (const route of ROUTES) {
     let html = patchHead(template, route);
-    html = injectRoot(html, route.body);
+    html = injectCrawlContent(html, route.body);
     const out = routeToFile(route.path);
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out, html, 'utf8');
