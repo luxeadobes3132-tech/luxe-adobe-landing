@@ -1,5 +1,11 @@
 {
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "luxeadobes.com" }],
+      "destination": "https://www.luxeadobes.com/:path*",
+      "permanent": true
+    },
     { "source": "/wayanad-resorts", "destination": "/destinations/wayanad", "permanent": true },
     { "source": "/wayanad-resort", "destination": "/destinations/wayanad", "permanent": true },
     { "source": "/ooty-resorts", "destination": "/destinations/ooty", "permanent": true },

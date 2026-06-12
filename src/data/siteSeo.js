@@ -1,7 +1,22 @@
 /**
  * Central SEO configuration  -  update SITE_URL when the production domain is final.
  */
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://www.luxeadobes.com').replace(/\/$/, '');
+const CANONICAL_ORIGIN = 'https://www.luxeadobes.com';
+
+function resolveCanonicalOrigin() {
+  const raw = (import.meta.env.VITE_SITE_URL || CANONICAL_ORIGIN).replace(/\/$/, '');
+  try {
+    const url = new URL(raw);
+    if (url.hostname === 'luxeadobes.com') {
+      url.hostname = 'www.luxeadobes.com';
+    }
+    return url.origin;
+  } catch {
+    return CANONICAL_ORIGIN;
+  }
+}
+
+export const SITE_URL = resolveCanonicalOrigin();
 
 export const SITE_NAME = 'Luxe Adobes';
 export const SITE_TAGLINE = 'Luxury Resort Collection';

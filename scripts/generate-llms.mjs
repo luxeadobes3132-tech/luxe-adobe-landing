@@ -7,6 +7,7 @@ import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { getCanonicalSiteUrl } from './canonical-site-url.mjs';
 
 const require = createRequire(import.meta.url);
 const properties = require('../src/data/properties.json');
@@ -15,7 +16,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const publicDir = join(root, 'public');
 
-const SITE_URL = (process.env.VITE_SITE_URL || 'https://www.luxeadobes.com').replace(/\/$/, '');
+const SITE_URL = getCanonicalSiteUrl();
 
 const BRAND = {
   name: 'Luxe Adobes',

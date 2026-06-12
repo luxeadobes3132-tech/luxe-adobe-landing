@@ -45,7 +45,7 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-# AI discovery files (llmstxt.org)
+# AI discovery (llmstxt.org) — authoritative fact sheet for assistants
 # https://www.luxeadobes.com/llms.txt
 # https://www.luxeadobes.com/llms-full.txt
 
