@@ -21,7 +21,7 @@ export function organizationJsonLd() {
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
-    logo: absoluteUrl('/android-chrome-192x192.png'),
+    logo: absoluteUrl('/favicon.png'),
     description:
       'Luxe Adobes is a collection of luxury resorts and retreats in Kerala and Tamil Nadu, including Wayanad Gate and Ubuntu Retreat Ooty.',
     email: SITE_EMAIL,
